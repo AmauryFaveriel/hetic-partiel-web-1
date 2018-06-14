@@ -1293,7 +1293,7 @@ table a,
 	}
 	#pageintro article {
 		max-width: none;
-		text-align: left;
+		text-align: center;
 	}
 	#pageintro .heading {
 		font-size: 2rem;
