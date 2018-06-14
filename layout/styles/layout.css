@@ -1326,7 +1326,6 @@ table a,
 		white-space: nowrap;
 	}
 	.inline li {
-		display: block;
 		margin-bottom: 10px;
 	}
 	.pushright li {
@@ -1339,7 +1338,6 @@ table a,
 		font-size: 1.6rem;
 	}
 }
-
 .menuBurger{
 	width: 35px;
 	height: 30px;
