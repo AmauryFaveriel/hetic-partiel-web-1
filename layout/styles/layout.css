@@ -474,7 +474,6 @@ nav ol {
 }
 
 #mainav ul ul {
-	z-index: 9999;
 	position: absolute;
 	width: 180px;
 	text-transform: none;
@@ -1379,6 +1378,9 @@ table a,
 .menuBurger:not(.clickMenuBurger):hover span:nth-child(3){
 	transform: rotate(-4deg) scaleY(1.1);
 }
+.clickMenuBurger{
+  margin-top: 20px;
+}
 .clickMenuBurger span:nth-child(1){
 	transform: rotate(45deg);
 	top: 13px;
@@ -1402,6 +1404,7 @@ table a,
     width: 100vw;
     height: 100vh;
     background: #000;
+  z-index: 9000;
 }
 
 .scrollMenu{

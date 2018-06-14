@@ -13,18 +13,20 @@ menuBurger.addEventListener('click', addClassMenuBurger);
 
 var lastScrollTop = 0;
 // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
-    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-    if (st > lastScrollTop){
-        menuBurger.style.position="relative";
-        list.style.position="relative";
-    } else {
-        menuBurger.style.position="fixed";
-        list.style.position="fixed";
-        list.style.alignItems="center";
-    }
-    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-}, false);
+if(hasClass(menuBurger, "clickMenuBurger")){
+    //
+}
+else {
+    window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+        var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+        if (st > lastScrollTop){
+            menuBurger.style.position="relative";
+        } else {
+            menuBurger.style.position="fixed";
+        }
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }, false);
+}
 
 var btnScroll = document.querySelector("#backtotop");
 
@@ -33,3 +35,7 @@ btnScroll.addEventListener('click', function () {
         behavior: "smooth"
     });
 });
+
+function hasClass(element, className) {
+    return (' ' + element.className + ' ').indexOf(' ' + className+ ' ') > -1;
+}
