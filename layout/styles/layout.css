@@ -939,7 +939,7 @@ textarea:focus,
 
 .row2 {
 	color: #FFFFFF;
-	background-color: #222222;
+    background-image: url('images/demo/backgrounds/02.png');
 }
 
 .row3 {
