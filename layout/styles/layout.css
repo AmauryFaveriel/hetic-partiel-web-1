@@ -465,7 +465,9 @@ nav ol {
 
 /* Top Navigation */
 
-#mainav {}
+#mainav {
+    left: 50%;
+}
 
 #mainav ul {
 	text-transform: uppercase;
@@ -1342,10 +1344,9 @@ table a,
 .menuBurger{
 	width: 35px;
 	height: 30px;
-    margin-right: 5%;
+    margin: 0 5% 0 80%;
 	position: relative;
 	cursor: pointer;
-    float: right;
 }
 .menuBurger span{
 	background-color:#FFF;

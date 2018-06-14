@@ -2,11 +2,27 @@ var menuBurger = document.querySelector('.menuBurger');
 var row1 = document.querySelector('.row1');
 var row0 = document.querySelector('.row0');
 var list = document.querySelector('#mainav');
-function addClassFunFive() {
+function addClassMenuBurger() {
     this.classList.toggle("clickMenuBurger");
     row1.classList.toggle("mobileMenu");
     row0.classList.toggle("displayNone");
     list.classList.toggle("scrollMenu");
 }
 
-menuBurger.addEventListener('click', addClassFunFive);
+menuBurger.addEventListener('click', addClassMenuBurger);
+
+var lastScrollTop = 0;
+// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+    if (st > lastScrollTop){
+        menuBurger.style.position="relative";
+        list.style.position="relative";
+    } else {
+        menuBurger.style.position="fixed";
+        list.style.position="fixed";
+        list.style.alignItems="center";
+    }
+    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+
