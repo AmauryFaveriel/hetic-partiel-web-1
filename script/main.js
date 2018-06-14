@@ -26,3 +26,10 @@ window.addEventListener("scroll", function(){ // or window.addEventListener("scr
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 
+var btnScroll = document.querySelector("#backtotop");
+
+btnScroll.addEventListener('click', function () {
+    document.querySelector('#topbar').scrollIntoView({
+        behavior: "smooth"
+    });
+});
